@@ -7,14 +7,14 @@ Proyecto Final para ingreso NTT Data
 
 ###Technologies
 ****
-[Frontend] 
+- [Frontend] 
 * [Programming language: Typescript ] Version: 4.7.2
 * [FrameWork:Angular](npm install -g @angular/cli): Version: 14.2.1 
 * [HTML] Version: 5
 * [CSS] Version: 3
 * [SASS](npm install -g sass) Version: 1.54.9
 * [Metodology: BEM]
-[Backend] 
+- [Backend] 
 * [Programming language: Java SE Development Kit ](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html): Version: 17.0.4.1
 * [FrameWork: spring boot](https://start.spring.io/): Version: 2.7.3
 * [DataBase: PostgreSQL](https://www.postgresql.org/): Version: 11.1
