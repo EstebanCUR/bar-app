@@ -31,7 +31,7 @@ export class AccountComponent implements OnInit {
     if(this.showProductsAdded.includes(product)){
       let deleteArray = this.showProductsAdded.indexOf(product)
       this.showProductsAdded.splice(deleteArray, 1)
-      this.total -= product.price
+      this.total -= product.price * product.cantidad.value
     }
   }
 
