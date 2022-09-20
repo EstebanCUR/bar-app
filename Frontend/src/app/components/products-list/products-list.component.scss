@@ -1,0 +1,48 @@
+@use '../../../assets/_mixin';
+@use '../../../assets/_variables';
+
+.categories{
+  margin-bottom: 60px;
+  padding-top: 20px;
+}
+
+.products-list{
+  &--border{
+    border-bottom: 1px solid variables.$greylight;
+  }
+  &__category{
+    color: variables.$white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding-left: 10px;
+    background-color: variables.$veryDark;
+    height: 40px;
+    padding-top: 10px
+  }
+
+  &__product{
+    @include mixin.flexbox(row, center, space-between);
+    padding-right: 12px;
+  }
+
+  &__check-container{
+    height: 40px;
+    width: 40px;
+    @include mixin.flexbox(row, center, center)
+  }
+
+  &__checkbox{
+    height: 20px;
+    width: 20px;
+    border: 1px solid variables.$grey;
+  }
+}
+
+.btn{
+  padding: 0;
+  &-container{
+    @include mixin.flexbox(row, center, flex-end)
+  }
+}

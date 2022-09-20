@@ -1,0 +1,40 @@
+<section class="container">
+  <div class="categories">
+    <article class="products-list">
+      <h2 class="products-list__category">Bebidas</h2>
+      <ul class="products-list__products" *ngFor="let product of listProducts; let i = index;">
+        <li class="products-list__product" *ngIf="product.category === 'Bebida' && product.status === true"
+        [ngClass]="product.status === true ? 'products-list--border' : ''">
+          <label class="products-list__check-container">
+            <input [formControl]="product.checkbox" (change)="selectedProduct(product, $event)"
+            class="products-list__checkbox" type="checkbox">
+            <!-- (change)="selectedProduct(product, $event)" es de aca arriba el input -->
+          </label>
+          <p>{{product.product}}</p>
+          <p>{{product.price | currency: '$'}}</p>
+        </li>
+      </ul>
+    </article>
+    <article class="products-list">
+      <h2 class="products-list__category">Cervezas</h2>
+      <ul class="products-list__products" *ngFor="let product of listProducts ; let i = index;">
+        <li class="products-list__product" *ngIf="product.category === 'Cerveza' && product.status === true"
+        [ngClass]="product.status === true ? 'products-list--border' : ''">
+          <label class="products-list__check-container">
+            <input [formControl]="product.checkbox" (change)="selectedProduct(product, $event)"
+            class="products-list__checkbox" type="checkbox">
+            <!-- (change)="selectedProduct(product, $event)" es de aca arriba el input -->
+          </label>
+          <p>{{product.product}}</p>
+          <p>{{product.price | currency: '$'}}</p>
+        </li>
+      </ul>
+    </article>
+  </div>
+  <div class="btn-container">
+    <!-- (click)="submitSelection()" -->
+    <button (click)="submitSelection()" [routerLink]="['/my-order/add-products']"  type="button" class="btn btn--half btn--text">
+      Agregar selección
+    </button>
+  </div>
+</section>

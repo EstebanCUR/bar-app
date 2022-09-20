@@ -1,0 +1,27 @@
+@use '../../../assets/_mixin';
+@use '../../../assets/_variables';
+
+.total--dark{
+  border-radius: 10px;
+}
+
+.confirm-product{
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid variables.$veryDark;
+  @include mixin.flexbox(row, center, space-between);
+  margin-bottom: 10px;
+  &__name{
+    padding-left: 10px;
+    width: 70%;
+    @include mixin.flexbox(row, center, space-between);
+    gap: 20px;
+  }
+  &__price{
+    padding-right: 10px;
+    width: 20%;
+    @include mixin.flexbox(row, center, space-between);
+    gap: 10px
+  }
+}

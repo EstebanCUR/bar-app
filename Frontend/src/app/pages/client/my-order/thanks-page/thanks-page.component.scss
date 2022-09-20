@@ -1,0 +1,17 @@
+@use '../../../../../assets/_mixin';
+@use '../../../../../assets/_variables';
+
+.thanks{
+  width: 89%;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: variables.$white;
+  @include mixin.flexbox(column, center, center);
+  gap: 50px;
+  &__img{
+    width: 60%;
+  }
+  &__title{
+    font-size: 1.5rem;
+  }
+}

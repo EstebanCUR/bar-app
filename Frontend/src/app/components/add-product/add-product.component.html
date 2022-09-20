@@ -1,0 +1,8 @@
+<div class="add-product__product-cont mb-10">
+  <p>{{product.product}}</p>
+  <div class="add-product__minusplus">
+    <button (click)="removeAmount()" [ngClass]="count === 0 ? 'add-product__btn--inactive':'' "  class="add-product__btn add-product__btn-minus"><i class="fa-solid fa-minus add-product__btn-icon"></i></button>
+    <span>{{product.cantidad.value}}</span>
+    <button  (click)="addAmount()" type="button" class="add-product__btn add-product__btn-plus"><i class="fa-solid fa-plus add-product__btn-icon"></i></button>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<section class="container code-section">
+  <img class="code-section__logo" src="../../../assets/img/logo.png" alt="logo bar">
+  <section class="code-table">
+    <h2 class="code-table__title">Utiliza el código de la Mesa</h2 >
+    <input [formControl]="control" class="code-table__input input--extended" type="text" placeholder="Ingrese el número de la mesa">
+    <button [routerLink]="['/menu/products-list']" routerLinkActive="router-link-active"  [disabled]="control.invalid" [ngClass]="control.invalid  ? 'btn--inactive':'' "  class="btn btn--extended btn--text" type="button">Validar</button>
+  </section>
+</section>

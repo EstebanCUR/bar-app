@@ -1,0 +1,29 @@
+<section class="correction-header container">
+  <article class="add-product">
+    <div class="add-product__titles">
+      <span class="title">Pendientes</span>
+      <p class="pt-10">Confirma tu orden para realizar el pedido</p>
+    </div>
+    <div class="categories correction-total">
+      <div *ngFor="let selected of showProductsAdded" class="add-product__amount confirm-product">
+        <div class="confirm-product__name">
+          {{selected.cantidad.value}}
+          {{selected.product}}
+        </div>
+        <div class="confirm-product__price">
+          {{selected.price}}
+          <i (click)="removeClick(selected)"  class="fa-solid fa-trash icon "></i>
+        </div>
+      </div>
+    </div>
+      <div class="btn-container">
+        <div class="total total--dark pb-10">
+          <span class="total__text">Total</span>
+          <span class="total__price">{{total | currency: '$'}}</span>
+        </div>
+        <button [routerLink]="['/my-order/thanks']" type="button" class="btn pl-10 pr-10 btn--extended btn--text btn--success">
+          Pedir cuenta
+        </button>
+      </div>
+  </article>
+</section>

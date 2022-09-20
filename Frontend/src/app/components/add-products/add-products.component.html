@@ -1,0 +1,24 @@
+<section class="correction-header container">
+  <article *ngIf="listSelected.length > 0" class="add-product">
+    <div class="add-product__titles mb-30">
+      <div class="add-product__title-select">
+        <i class="fa-solid fa-chevron-left"></i>
+        <span class="title">Selección</span>
+      </div>
+      <span class="title">Cantidades</span>
+    </div>
+    <div class="correction-total">
+      <app-add-product [myProduct]="selected" *ngFor="let selected of listSelected" (removedProduct)="saveAmountRemoved($event)" (addedProduct)="saveAmountAdded($event)" class="add-product__amount"></app-add-product>
+    </div>
+  </article>
+  <app-empty-order *ngIf="listSelected.length === 0"></app-empty-order>
+  <div *ngIf="listSelected.length > 0" class="btn-container">
+    <div class="total total--dark">
+      <span class="total__text">Total</span>
+      <span class="total__price">{{total | currency: 'CLP'}}</span>
+    </div>
+    <button [routerLink]="['/my-order/confirm-products']" type="button" class="btn btn--extended btn--text">
+      Agregar selección
+    </button>
+  </div>
+</section>

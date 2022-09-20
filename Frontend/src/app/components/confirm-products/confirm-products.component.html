@@ -1,0 +1,41 @@
+<section class="correction-header container">
+  <article class="add-product">
+    <div class="add-product__titles">
+      <span class="title">Pendientes</span>
+      <p class="pt-10">Confirma tu orden para realizar el pedido</p>
+    </div>
+    <div class="add-product__amount correction-total-confirm">
+      <div *ngFor="let selected of showProductsAdded" class="confirm-product">
+        <div class="confirm-product__name">
+          {{selected.cantidad.value}}
+          {{selected.product}}
+        </div>
+        <div class="confirm-product__price">
+          {{selected.price | currency: '$'}}
+          <i (click)="removeClick(selected)" class="fa-solid fa-trash icon "></i>
+        </div>
+      </div>
+    </div>
+    <div class="section-total btn-container">
+      <div class="section-confirm mb-30">
+        <div>
+          <button [routerLink]="['/my-order/account']" type="button" class="btn btn--extended btn--text">
+            Confirmar pedido
+          </button>
+        </div>
+        <div class="total btn--half total--dark">
+          <span class="total__text">Total</span>
+          <span class="total__price">{{total | currency: '$'}}</span>
+        </div>
+      </div>
+      <div class="total total--white total--border-b">
+        <span class="total__text">Consumo anterior</span>
+        <span class="total__price">{{totalPrev | currency: '$'}}</span>
+      </div>
+      <div class="total total--dark total--border-t">
+        <span class="total__text">Consumo total</span>
+        <span class="total__price">{{total | currency: '$'}}</span>
+      </div>
+    </div>
+  </article>
+</section>

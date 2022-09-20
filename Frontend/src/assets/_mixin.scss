@@ -1,0 +1,13 @@
+@use 'sass:math';
+
+@mixin flexbox($direction, $alignItems, $justify){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $alignItems;
+    justify-content: $justify;
+}
+
+@function pixeles-rem($pixeles){
+    $rem: math.div($pixeles, 16) * 1rem;
+    @return $rem
+}

@@ -1,0 +1,8 @@
+@use '../../../assets/_mixin';
+@use '../../../assets/_variables';
+
+.empty-order--center{
+  height: calc(100vh - 92px);
+  @include mixin.flexbox(column, center, center);
+  gap: 20px;
+}

@@ -1,0 +1,170 @@
+@use './assets/_reset';
+@use './assets/_variables';
+@use './assets/_mixin';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+.container{
+  width: 89%;
+  margin: 0 auto;
+}
+
+.total{
+  @include mixin.flexbox(row, center, space-between);
+  padding: 0 10px;
+  height: 50px;
+  font-weight: 600;
+  border-radius: 10px;
+  &--dark{
+    background-color: variables.$veryDark;
+    color: variables.$white;
+  }
+  &--white{
+    background-color: variables.$white;
+    color: variables.$veryDark;
+    border: 1px solid variables.$veryDark;
+  }
+  &--border-t{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+  &--border-b{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}
+
+.correction{
+  &-header{
+    margin-top: 92px;
+  }
+  &-total{
+    margin-bottom: 140px;
+  }
+  &-total-confirm{
+    margin-bottom: 210px;
+  }
+}
+
+.pt-10{
+  padding-top: 10px;
+}
+.pb-10{
+  padding-bottom: 10px;
+}
+.pt-20{
+  padding-top: 20px;
+}
+
+.mb-10{
+  margin-bottom: 10px;
+}
+.mt-30{
+  margin-top: 30px;
+}
+.mb-30{
+  margin-bottom: 30px;
+}
+
+.title{
+  font-size: 1rem;
+  font-weight: 600;
+  color: variables.$veryDark;
+  text-transform: uppercase;
+}
+.icon{
+  cursor: pointer;
+}
+.btn{
+  color: variables.$white;
+  background-color: variables.$orange;
+  font-weight: 700;
+  border-radius: 10px;
+  height: 50px;
+  cursor: pointer;
+  padding: 0 10px;
+  &--text{
+    color: variables.$white;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  &--half{
+    width: 50%;
+  }
+  &--extended{
+    width: 100%;
+  }
+  &--left{
+    @include mixin.flexbox(row, center, flex-start)
+  }
+  &--right{
+    @include mixin.flexbox(row, center, flex-end)
+  }
+  &--success{
+    background-color: variables.$success;
+  }
+  &--inactive{
+    background-color: variables.$greylight;
+    color: variables.$paleOrange;
+    cursor:default;
+  }
+  &-container{
+    @include mixin.flexbox(column, stretch, space-between);
+    gap: 10px;
+    position: fixed;
+    padding: 15px 5.5%;
+    text-align: end;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: variables.$white;
+  }
+}
+.input--extended{
+  width: 100%;
+  text-align: center;
+}
+
+.header{
+  height: 92px;
+  @include mixin.flexbox(column, center, space-evenly);
+  border-bottom: 1px solid variables.$greylight;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: variables.$white;
+  &__logo{
+    width: 46px;
+  }
+  &__tabs{
+    @include mixin.flexbox(row, center, space-evenly);
+    width: 100%;
+  }
+  &__tab{
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      left: 0;
+      height: 40px;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+  &__tab--selected{
+    color: variables.$orange;
+
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      left: 0;
+      border-bottom: 2px solid variables.$orange;
+    }
+  }
+}

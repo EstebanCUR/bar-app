@@ -1,0 +1,46 @@
+@use '../../../assets/_mixin';
+@use '../../../assets/_variables';
+
+.header{
+  height: 92px;
+  @include mixin.flexbox(column, center, space-evenly);
+  border-bottom: 1px solid variables.$greylight;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: variables.$white;
+  &__logo{
+    width: 46px;
+  }
+  &__tabs{
+    @include mixin.flexbox(row, center, space-evenly);
+    width: 100%;
+  }
+  &__tab{
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      left: 0;
+      height: 40px;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+  &__tab--selected{
+    color: variables.$orange;
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      left: 0;
+      border-bottom: 2px solid variables.$orange;
+    }
+  }
+}

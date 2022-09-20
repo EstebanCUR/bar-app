@@ -1,0 +1,6 @@
+@use '../../../assets/_mixin';
+@use '../../../assets/_variables';
+
+.add-product__titles{
+  @include mixin.flexbox(row, center, space-between);
+}

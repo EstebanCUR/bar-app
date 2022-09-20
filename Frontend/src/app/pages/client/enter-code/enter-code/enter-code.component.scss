@@ -1,0 +1,22 @@
+@use '../../../../../assets/_mixin';
+@use '../../../../../assets/_variables';
+
+.code-section{
+  @include mixin.flexbox(column, center, center);
+  height: 100vh;
+  gap: 60px
+}
+
+.code-table{
+  @include mixin.flexbox(column, center, space-between);
+  gap: 20px;
+  &__title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: variables.$veryDark;
+  }
+  &__input{
+    height: 50px;
+  }
+}
