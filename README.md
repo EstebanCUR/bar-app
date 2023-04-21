@@ -1,5 +1,5 @@
 # bar-app
-Proyecto Final para ingreso NTT Data
+Proyecto colaborativo
 
 ###General Info
 ****
